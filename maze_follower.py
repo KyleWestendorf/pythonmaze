@@ -6,5 +6,7 @@ def evaluateBoard(maze):
         for j, position in enumerate(row):
             if position == "E":
                 raise ValueError
+            if position == "S":
+                raise ValueError
 
     raise ValueError
