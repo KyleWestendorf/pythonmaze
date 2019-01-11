@@ -29,4 +29,15 @@ def test_given_user_has_received_a_board_that_lacks_an_end_but_has_a_start_when_
     except ValueError:
         return
 
+def test_given_current_location_is_unknown_and_the_board_has_not_been_navigated_when_evaluating_the_board_for_s_then_the_location_of_the_s_is_returned():
+    maze = ["WWSWWE"]
+    x, y = evaluateBoard(maze)
+    assert(x == 2)
+    assert(y == 0)
+    
         
+def test_given_current_location_location_is_known_when_evaluating_adjacent_spaces_then_coordinates_of_empty_space_is_returned():
+    maze = ["WWS WWE"]
+    x, y = evaluateBoard(maze, 2, 0)
+    assert(x == 3)
+    assert(y == 0)
