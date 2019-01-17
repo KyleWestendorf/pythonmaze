@@ -1,5 +1,5 @@
 # 
-from maze_follower import test, evaluateBoard
+from maze_follower import test, evaluateBoard, leaveBreadCrumb
 
 def test_test(): 
     result = test()
@@ -49,3 +49,9 @@ def test_given_current_location_is_known_and_there_are_no_adjacent_empty_spaces_
          assert(False)
     except ValueError:
         return
+
+def test_given_adjacent_empty_location_is_known_and_users_current_location_is_known_and_not_start_when_evaluating_board_then_a_breadcrumb_is_left_in_current_location():
+    maze = ["WS  WWE"]
+    evaluateBoard(maze, 2, 0)
+    newMaze = leaveBreadCrumb(maze, 0, 2)
+    assert(newMaze[0][2] == '*')

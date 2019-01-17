@@ -7,3 +7,15 @@ given
 and
 then
 when
+
+X
+Given current location is known
+and there are no adjacent empty spaces
+when evaluating board
+then an error is thrown
+
+Given adjacent empty location is known
+and users current location is known
+when evaluating board
+then a breadcrumb is left in previous loation
+
