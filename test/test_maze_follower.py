@@ -36,8 +36,16 @@ def test_given_current_location_is_unknown_and_the_board_has_not_been_navigated_
     assert(y == 0)
     
         
-def test_given_current_location_location_is_known_when_evaluating_adjacent_spaces_then_coordinates_of_empty_space_is_returned():
+def test_given_current_location_is_known_when_evaluating_adjacent_spaces_then_coordinates_of_empty_space_is_returned():
     maze = ["WWS WWE"]
     x, y = evaluateBoard(maze, 2, 0)
     assert(x == 3)
     assert(y == 0)
+
+def test_given_current_location_is_known_and_there_are_no_adjacent_empty_spaces_when_evaluating_adjacent_spaces_then_an_error_is_thrown():
+    maze = ["WWSWWE"]
+    try:
+         evaluateBoard(maze, 2, 0)
+         assert(False)
+    except ValueError:
+        return

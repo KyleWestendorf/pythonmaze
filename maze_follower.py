@@ -23,11 +23,11 @@ def evaluateBoard(maze, cx = -1, cy = -1):
             if cx == -1 and cy == -1:
                 if position == "S":
                    return x, y
-            else:
-                x = 3
-                y = 0
-                return x, y
-
+            elif position == " ":
+                if y == cy and x - 1 == cx:
+                    return x, y
+                        
+             
     raise ValueError
 
 
